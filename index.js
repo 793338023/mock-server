@@ -14,7 +14,7 @@ const sleep = () =>
 
 app.use(async (ctx) => {
   try {
-    const url = ctx.url.slice(1);
+    const url = ctx.url.slice(1).split("?")[0];
     const filename = url.split("/").join(".");
     const filePath = path.resolve(process.cwd(), `./data/${filename}.js`);
 
